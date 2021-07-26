@@ -43,8 +43,8 @@ public class Result {
      * @param obj
      * @return
      */
-    public static Result error(Object obj){
-        return new Result(ResultEnum.ERROR.getCode(), ResultEnum.ERROR.getMessage(), obj);
+    public static Result error(ResultEnum resultEnum,Object obj){
+        return new Result(resultEnum.getCode(), resultEnum.getMessage(), obj);
     }
 
     /**
@@ -53,6 +53,6 @@ public class Result {
      * @return
      */
     public static Result error(ResultEnum resultEnum){
-        return new Result(ResultEnum.ERROR.getCode(), ResultEnum.ERROR.getMessage(), null);
+        return new Result(resultEnum.getCode(), resultEnum.getMessage(), null);
     }
 }

@@ -2,6 +2,7 @@ package com.ling.seckill.mapper;
 
 import com.ling.seckill.pojo.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * <p>

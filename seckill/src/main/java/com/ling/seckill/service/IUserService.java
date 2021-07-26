@@ -2,6 +2,11 @@ package com.ling.seckill.service;
 
 import com.ling.seckill.pojo.User;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.ling.seckill.vo.LoginVo;
+import com.ling.seckill.vo.Result;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * <p>
@@ -13,4 +18,12 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IUserService extends IService<User> {
 
+    /**
+     * 登录
+     * @param loginVo
+     * @param request
+     * @param response
+     * @return
+     */
+    Result doLogin(LoginVo loginVo, HttpServletRequest request, HttpServletResponse response);
 }
