@@ -2,6 +2,7 @@ package com.ling.seckill.service;
 
 import com.ling.seckill.pojo.Goods;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.ling.seckill.vo.GoodsVo;
 
 /**
  * <p>
@@ -13,4 +14,17 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IGoodsService extends IService<Goods> {
 
+    /**
+     * 商品列表
+     * @return
+     */
+    GoodsVo findGoodsVo();
+
+
+    /**
+     * 商品详情
+     * @param goodsId
+     * @return
+     */
+    GoodsVo findGoodsVoByGoodsId(Integer goodsId);
 }

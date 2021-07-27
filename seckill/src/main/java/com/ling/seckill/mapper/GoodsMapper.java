@@ -2,6 +2,7 @@ package com.ling.seckill.mapper;
 
 import com.ling.seckill.pojo.Goods;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.ling.seckill.vo.GoodsVo;
 
 /**
  * <p>
@@ -13,4 +14,16 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface GoodsMapper extends BaseMapper<Goods> {
 
+    /**
+     * 商品列表
+     * @return
+     */
+    GoodsVo findGoodsVo();
+
+    /**
+     * 商品详情
+     * @param goodsId
+     * @return
+     */
+    GoodsVo findGoodsVoByGoodsId(Integer goodsId);
 }

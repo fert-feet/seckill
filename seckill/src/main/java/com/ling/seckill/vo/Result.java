@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
+ * @author Ky2Fe
  * @program: seckill
  * @description: 统一返回类
  **/

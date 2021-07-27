@@ -61,4 +61,20 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         CookieUtil.setCookie(request,response,"userTicket",ticket);
         return Result.success(ticket);
     }
+
+    /**
+     * 自定义用户配置
+     * @param request
+     * @param response
+     * @param userTicket
+     * @return
+     */
+    @Override
+    public User getUserByCookie(HttpServletRequest request, HttpServletResponse response, String userTicket) {
+        User user = (User) redisTemplate.opsForValue().get("user:" + userTicket);
+        if (user!=null){
+            CookieUtil.setCookie(request,response,"userTicket",userTicket);
+        }
+        return user;
+    }
 }

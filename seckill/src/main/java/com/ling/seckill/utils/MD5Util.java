@@ -5,19 +5,20 @@ package com.ling.seckill.utils;/**
 import org.apache.commons.codec.digest.DigestUtils;
 
 /**
+ * @author Ky2Fe
  * @program: seckill
  * @description: md5加密工具类
  **/
 
 public class MD5Util {
-    private static final String salt="1a2b3c4d";
+    private static final String SALT ="1a2b3c4d";
 
     public static String md5(String src){
         return DigestUtils.md5Hex(src);
     }
 
     public static String inputPassToFormPass(String inputPass){
-        String str=""+salt.charAt(2)+salt.charAt(4)+inputPass+salt.charAt(5)+salt.charAt(6);
+        String str=""+ SALT.charAt(2)+ SALT.charAt(4)+inputPass+ SALT.charAt(5)+ SALT.charAt(6);
         return md5(str);
     }
 
@@ -34,7 +35,7 @@ public class MD5Util {
 
     public static void main(String[] args) {
         System.out.println(inputPassToFormPass("123456"));
-        System.out.println(inputPassToDBPass("123456",salt));
+        System.out.println(inputPassToDBPass("123456", SALT));
     }
 
 }
