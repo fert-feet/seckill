@@ -2,10 +2,29 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    username: root
-    password: lwz7254591
-    url: jdbc:mysql://localhost:3306/seckill?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
-
+#    ubuntu配置
+    username: ling
+#    win配置
+#    username: root
+    password: 1234
+    url: jdbc:mysql://192.168.31.114:3306/seckill?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    hikari:
+      #连接池名
+      pool-name: DateHikariCP
+      # 最小空闲连接出
+      minimum-idle: 5
+      # 空闲连接存活最大时间，默认600000(10分钟)
+      idle-timeout: 600000
+      #最大连接数，默认10
+      maximum-pool-size: 10
+      # 从连接池返回的连接自动提交
+      auto-commit: true
+      # 连接最大存活时间，0表示永久存活，默认1800000(30分钟)
+      max-lifetime: 1800000
+      # 连接超时时间，默认30000(30秒)
+      connection-timeout: 30000
+      # 测试连接是否可用的查询语句
+      connection-test-query: SELECT 1
 
 
   thymeleaf:
@@ -15,7 +34,7 @@ spring:
 
 
   redis:
-    host: 192.168.31.113
+    host: 192.168.31.114
     timeout: 10000ms
     lettuce:
       pool:
@@ -27,4 +46,15 @@ spring:
         max-idle: 200
         #最小空闲连接，默认0
         min-idle: 5
+
+mybatis-plus:
+  # 配置Mapper.xml映射文件
+  mapper-locations: classpath*:/mapper/*Mapper.xml
+  # 配置MyBatis数据返回类型别名(默认别名是类名)
+  type-aliases-package: com.ling.seckill.pojo
+
+# MyBatis SQL打印(方法接口所在的包，不是Mapper.xml所在的包)
+logging:
+  level:
+    com.ling.seckill.mapper: debug
 

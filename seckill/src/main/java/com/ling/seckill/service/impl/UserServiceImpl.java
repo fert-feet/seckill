@@ -1,5 +1,6 @@
 package com.ling.seckill.service.impl;
 
+//import com.ling.seckill.exception.GlobalException;
 import com.ling.seckill.exception.GlobalException;
 import com.ling.seckill.pojo.User;
 import com.ling.seckill.mapper.UserMapper;

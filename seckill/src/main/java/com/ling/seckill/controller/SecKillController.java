@@ -11,6 +11,7 @@ import com.ling.seckill.service.IOrderService;
 import com.ling.seckill.service.ISeckillOrderService;
 import com.ling.seckill.vo.GoodsVo;
 import com.ling.seckill.vo.ResultEnum;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,7 +24,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @program: seckill
  * @description: 秒杀控制器
  **/
-
+@Slf4j
 @Controller
 @RequestMapping("/seckill")
 public class SecKillController {

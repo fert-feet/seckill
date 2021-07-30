@@ -4,6 +4,7 @@ package com.ling.seckill.controller;
 import com.ling.seckill.pojo.User;
 import com.ling.seckill.service.IGoodsService;
 import com.ling.seckill.vo.GoodsVo;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,6 +23,7 @@ import java.util.Date;
  * @author ky2fe
  * @since 2021-07-26
  */
+@Slf4j
 @Controller
 @RequestMapping("/goods")
 public class GoodsController {

@@ -4,6 +4,8 @@ import com.ling.seckill.pojo.Goods;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.ling.seckill.vo.GoodsVo;
 
+import java.util.List;
+
 /**
  * <p>
  *  服务类
@@ -18,7 +20,7 @@ public interface IGoodsService extends IService<Goods> {
      * 商品列表
      * @return
      */
-    GoodsVo findGoodsVo();
+    List<GoodsVo> findGoodsVo();
 
 
     /**
