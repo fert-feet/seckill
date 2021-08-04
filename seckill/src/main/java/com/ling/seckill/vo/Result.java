@@ -32,10 +32,10 @@ public class Result {
 
     /**
      * 成功返回结果
-     * @param resultEnum
+     * @param
      * @return
      */
-    public static Result success(ResultEnum resultEnum){
+    public static Result success(){
         return new Result(ResultEnum.SUCCESS.getCode(),ResultEnum.SUCCESS.getMessage(),null);
     }
 

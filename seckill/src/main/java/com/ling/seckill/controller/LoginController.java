@@ -51,6 +51,8 @@ public class LoginController {
     @PostMapping("/doLogin")
     @ResponseBody
     public Result doLogin(@Valid LoginVo loginVo, HttpServletRequest request,HttpServletResponse response){
+        log.debug(loginVo.getMobile());
+        log.debug(loginVo.getPassword());
         return userService.doLogin(loginVo,request,response);
     }
 

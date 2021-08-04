@@ -1,0 +1,180 @@
+2021-08-04 16:27:47.833  INFO 9164 --- [main] com.ling.seckill.SeckillApplication      : Starting SeckillApplication using Java 11.0.12 on DESKTOP-F3P229A with PID 9164 (D:\Project\JAVA\秒杀系统\seckill\target\classes started by 32145 in D:\Project\JAVA\秒杀系统\seckill)
+2021-08-04 16:27:47.837  INFO 9164 --- [main] com.ling.seckill.SeckillApplication      : No active profile set, falling back to default profiles: default
+2021-08-04 16:27:48.558  INFO 9164 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-08-04 16:27:48.560  INFO 9164 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-08-04 16:27:48.582  INFO 9164 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2021-08-04 16:27:48.975  INFO 9164 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-08-04 16:27:48.981  INFO 9164 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-04 16:27:48.982  INFO 9164 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-08-04 16:27:49.048  INFO 9164 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-04 16:27:49.048  INFO 9164 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1146 ms
+2021-08-04 16:27:50.337  INFO 9164 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-08-04 16:27:50.347  INFO 9164 --- [main] com.ling.seckill.SeckillApplication      : Started SeckillApplication in 2.936 seconds (JVM running for 3.785)
+2021-08-04 16:28:42.310  INFO 9164 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-04 16:28:42.312  INFO 9164 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-04 16:28:42.313  INFO 9164 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-08-04 16:29:35.051  INFO 9164 --- [http-nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource       : DateHikariCP - Starting...
+2021-08-04 16:29:35.382  INFO 9164 --- [http-nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource       : DateHikariCP - Start completed.
+2021-08-04 16:29:35.389 DEBUG 9164 --- [http-nio-8080-exec-3] c.l.s.m.G.findGoodsVoByGoodsId           : ==>  Preparing: SELECT g.id, g.goods_name, g.goods_title, g.goods_img, g.goods_detail, g.goods_price, g.goods_stock, sg.seckill_price, sg.stock_count, sg.start_date, sg.end_date FROM t_goods g INNER JOIN t_seckill_goods sg ON g.id = sg.goods_id WHERE g.id =?
+2021-08-04 16:29:35.406 DEBUG 9164 --- [http-nio-8080-exec-3] c.l.s.m.G.findGoodsVoByGoodsId           : ==> Parameters: 2(Integer)
+2021-08-04 16:29:35.423 DEBUG 9164 --- [http-nio-8080-exec-3] c.l.s.m.G.findGoodsVoByGoodsId           : <==      Total: 1
+2021-08-04 16:30:16.521  INFO 17932 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-08-04 16:30:16.525  INFO 17932 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-08-04 16:30:16.546  INFO 17932 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2021-08-04 16:30:16.929  INFO 17932 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-08-04 16:30:16.937  INFO 17932 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-04 16:30:16.937  INFO 17932 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-08-04 16:30:17.002  INFO 17932 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-04 16:30:17.003  INFO 17932 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 983 ms
+2021-08-04 16:30:18.312  INFO 17932 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-08-04 16:30:22.529  INFO 17932 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-04 16:30:22.530  INFO 17932 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-04 16:30:22.531  INFO 17932 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-08-04 16:30:23.660  INFO 17932 --- [http-nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource       : DateHikariCP - Starting...
+2021-08-04 16:30:24.098  INFO 17932 --- [http-nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource       : DateHikariCP - Start completed.
+2021-08-04 16:31:01.417  INFO 1848 --- [main] com.ling.seckill.SeckillApplication      : Starting SeckillApplication using Java 11.0.12 on DESKTOP-F3P229A with PID 1848 (D:\Project\JAVA\秒杀系统\seckill\target\classes started by 32145 in D:\Project\JAVA\秒杀系统\seckill)
+2021-08-04 16:31:01.421  INFO 1848 --- [main] com.ling.seckill.SeckillApplication      : No active profile set, falling back to default profiles: default
+2021-08-04 16:31:02.089  INFO 1848 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-08-04 16:31:02.091  INFO 1848 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-08-04 16:31:02.114  INFO 1848 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2021-08-04 16:31:02.577  INFO 1848 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-08-04 16:31:02.587  INFO 1848 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-04 16:31:02.588  INFO 1848 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-08-04 16:31:02.663  INFO 1848 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-04 16:31:02.663  INFO 1848 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1179 ms
+2021-08-04 16:31:04.035  INFO 1848 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-08-04 16:31:04.045  INFO 1848 --- [main] com.ling.seckill.SeckillApplication      : Started SeckillApplication in 3.12 seconds (JVM running for 4.015)
+2021-08-04 16:31:09.967  INFO 1848 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-04 16:31:09.969  INFO 1848 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-04 16:31:09.970  INFO 1848 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-08-04 16:32:04.381  INFO 3440 --- [main] com.ling.seckill.SeckillApplication      : Starting SeckillApplication using Java 11.0.12 on DESKTOP-F3P229A with PID 3440 (D:\Project\JAVA\秒杀系统\seckill\target\classes started by 32145 in D:\Project\JAVA\秒杀系统\seckill)
+2021-08-04 16:32:04.383  INFO 3440 --- [main] com.ling.seckill.SeckillApplication      : No active profile set, falling back to default profiles: default
+2021-08-04 16:32:04.921  INFO 3440 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-08-04 16:32:04.923  INFO 3440 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-08-04 16:32:04.943  INFO 3440 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2021-08-04 16:32:05.325  INFO 3440 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-08-04 16:32:05.332  INFO 3440 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-04 16:32:05.332  INFO 3440 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-08-04 16:32:05.398  INFO 3440 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-04 16:32:05.399  INFO 3440 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 978 ms
+2021-08-04 16:32:06.784  INFO 3440 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-08-04 16:32:06.794  INFO 3440 --- [main] com.ling.seckill.SeckillApplication      : Started SeckillApplication in 2.969 seconds (JVM running for 3.851)
+2021-08-04 16:32:07.990  INFO 3440 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-04 16:32:07.992  INFO 3440 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-04 16:32:07.994  INFO 3440 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-08-04 16:32:57.893  INFO 9996 --- [main] com.ling.seckill.SeckillApplication      : Starting SeckillApplication using Java 11.0.12 on DESKTOP-F3P229A with PID 9996 (D:\Project\JAVA\秒杀系统\seckill\target\classes started by 32145 in D:\Project\JAVA\秒杀系统\seckill)
+2021-08-04 16:32:57.896  INFO 9996 --- [main] com.ling.seckill.SeckillApplication      : No active profile set, falling back to default profiles: default
+2021-08-04 16:32:58.443  INFO 9996 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-08-04 16:32:58.444  INFO 9996 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-08-04 16:32:58.471  INFO 9996 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+2021-08-04 16:32:58.965  INFO 9996 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-08-04 16:32:58.972  INFO 9996 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-04 16:32:58.972  INFO 9996 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-08-04 16:32:59.037  INFO 9996 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-04 16:32:59.037  INFO 9996 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1102 ms
+2021-08-04 16:33:00.445  INFO 9996 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-08-04 16:33:00.456  INFO 9996 --- [main] com.ling.seckill.SeckillApplication      : Started SeckillApplication in 3.02 seconds (JVM running for 3.984)
+2021-08-04 16:33:02.977  INFO 9996 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-04 16:33:02.979  INFO 9996 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-04 16:33:02.980  INFO 9996 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-08-04 16:33:14.971  INFO 10880 --- [main] com.ling.seckill.SeckillApplication      : Starting SeckillApplication using Java 11.0.12 on DESKTOP-F3P229A with PID 10880 (D:\Project\JAVA\秒杀系统\seckill\target\classes started by 32145 in D:\Project\JAVA\秒杀系统\seckill)
+2021-08-04 16:33:14.973  INFO 10880 --- [main] com.ling.seckill.SeckillApplication      : No active profile set, falling back to default profiles: default
+2021-08-04 16:33:15.527  INFO 10880 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-08-04 16:33:15.529  INFO 10880 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-08-04 16:33:15.550  INFO 10880 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2021-08-04 16:33:15.971  INFO 10880 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-08-04 16:33:15.981  INFO 10880 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-04 16:33:15.981  INFO 10880 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-08-04 16:33:16.051  INFO 10880 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-04 16:33:16.051  INFO 10880 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1038 ms
+2021-08-04 16:33:17.402  INFO 10880 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-08-04 16:33:17.414  INFO 10880 --- [main] com.ling.seckill.SeckillApplication      : Started SeckillApplication in 2.89 seconds (JVM running for 3.769)
+2021-08-04 16:33:20.295  INFO 10880 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-04 16:33:20.296  INFO 10880 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-04 16:33:20.299  INFO 10880 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-08-04 16:34:05.265  INFO 10880 --- [http-nio-8080-exec-8] com.zaxxer.hikari.HikariDataSource       : DateHikariCP - Starting...
+2021-08-04 16:34:05.587  INFO 10880 --- [http-nio-8080-exec-8] com.zaxxer.hikari.HikariDataSource       : DateHikariCP - Start completed.
+2021-08-04 16:34:05.594 DEBUG 10880 --- [http-nio-8080-exec-8] c.l.s.mapper.GoodsMapper.findGoodsVo     : ==>  Preparing: SELECT g.id, g.goods_name, g.goods_title, g.goods_img, g.goods_detail, g.goods_price, g.goods_stock, sg.seckill_price, sg.stock_count, sg.start_date, sg.end_date FROM t_goods g INNER JOIN t_seckill_goods sg ON g.id = sg.goods_id
+2021-08-04 16:34:05.611 DEBUG 10880 --- [http-nio-8080-exec-8] c.l.s.mapper.GoodsMapper.findGoodsVo     : ==> Parameters: 
+2021-08-04 16:34:05.629 DEBUG 10880 --- [http-nio-8080-exec-8] c.l.s.mapper.GoodsMapper.findGoodsVo     : <==      Total: 2
+2021-08-04 16:34:18.600 DEBUG 10880 --- [http-nio-8080-exec-7] c.l.s.m.G.findGoodsVoByGoodsId           : ==>  Preparing: SELECT g.id, g.goods_name, g.goods_title, g.goods_img, g.goods_detail, g.goods_price, g.goods_stock, sg.seckill_price, sg.stock_count, sg.start_date, sg.end_date FROM t_goods g INNER JOIN t_seckill_goods sg ON g.id = sg.goods_id WHERE g.id =?
+2021-08-04 16:34:18.600 DEBUG 10880 --- [http-nio-8080-exec-7] c.l.s.m.G.findGoodsVoByGoodsId           : ==> Parameters: 1(Integer)
+2021-08-04 16:34:18.603 DEBUG 10880 --- [http-nio-8080-exec-7] c.l.s.m.G.findGoodsVoByGoodsId           : <==      Total: 1
+2021-08-04 16:34:50.710 DEBUG 10880 --- [http-nio-8080-exec-5] c.l.s.m.G.findGoodsVoByGoodsId           : ==>  Preparing: SELECT g.id, g.goods_name, g.goods_title, g.goods_img, g.goods_detail, g.goods_price, g.goods_stock, sg.seckill_price, sg.stock_count, sg.start_date, sg.end_date FROM t_goods g INNER JOIN t_seckill_goods sg ON g.id = sg.goods_id WHERE g.id =?
+2021-08-04 16:34:50.710 DEBUG 10880 --- [http-nio-8080-exec-5] c.l.s.m.G.findGoodsVoByGoodsId           : ==> Parameters: 2(Integer)
+2021-08-04 16:34:50.714 DEBUG 10880 --- [http-nio-8080-exec-5] c.l.s.m.G.findGoodsVoByGoodsId           : <==      Total: 1
+2021-08-04 16:34:57.655 DEBUG 10880 --- [http-nio-8080-exec-10] c.l.s.m.G.findGoodsVoByGoodsId           : ==>  Preparing: SELECT g.id, g.goods_name, g.goods_title, g.goods_img, g.goods_detail, g.goods_price, g.goods_stock, sg.seckill_price, sg.stock_count, sg.start_date, sg.end_date FROM t_goods g INNER JOIN t_seckill_goods sg ON g.id = sg.goods_id WHERE g.id =?
+2021-08-04 16:34:57.655 DEBUG 10880 --- [http-nio-8080-exec-10] c.l.s.m.G.findGoodsVoByGoodsId           : ==> Parameters: 1(Integer)
+2021-08-04 16:34:57.658 DEBUG 10880 --- [http-nio-8080-exec-10] c.l.s.m.G.findGoodsVoByGoodsId           : <==      Total: 1
+2021-08-04 16:35:00.354 DEBUG 10880 --- [http-nio-8080-exec-2] c.l.s.m.G.findGoodsVoByGoodsId           : ==>  Preparing: SELECT g.id, g.goods_name, g.goods_title, g.goods_img, g.goods_detail, g.goods_price, g.goods_stock, sg.seckill_price, sg.stock_count, sg.start_date, sg.end_date FROM t_goods g INNER JOIN t_seckill_goods sg ON g.id = sg.goods_id WHERE g.id =?
+2021-08-04 16:35:00.355 DEBUG 10880 --- [http-nio-8080-exec-2] c.l.s.m.G.findGoodsVoByGoodsId           : ==> Parameters: 1(Integer)
+2021-08-04 16:35:00.357 DEBUG 10880 --- [http-nio-8080-exec-2] c.l.s.m.G.findGoodsVoByGoodsId           : <==      Total: 1
+2021-08-04 16:35:06.056 DEBUG 10880 --- [http-nio-8080-exec-6] c.l.s.m.G.findGoodsVoByGoodsId           : ==>  Preparing: SELECT g.id, g.goods_name, g.goods_title, g.goods_img, g.goods_detail, g.goods_price, g.goods_stock, sg.seckill_price, sg.stock_count, sg.start_date, sg.end_date FROM t_goods g INNER JOIN t_seckill_goods sg ON g.id = sg.goods_id WHERE g.id =?
+2021-08-04 16:35:06.057 DEBUG 10880 --- [http-nio-8080-exec-6] c.l.s.m.G.findGoodsVoByGoodsId           : ==> Parameters: 2(Integer)
+2021-08-04 16:35:06.060 DEBUG 10880 --- [http-nio-8080-exec-6] c.l.s.m.G.findGoodsVoByGoodsId           : <==      Total: 1
+2021-08-04 16:35:06.856 DEBUG 10880 --- [http-nio-8080-exec-5] c.l.s.m.G.findGoodsVoByGoodsId           : ==>  Preparing: SELECT g.id, g.goods_name, g.goods_title, g.goods_img, g.goods_detail, g.goods_price, g.goods_stock, sg.seckill_price, sg.stock_count, sg.start_date, sg.end_date FROM t_goods g INNER JOIN t_seckill_goods sg ON g.id = sg.goods_id WHERE g.id =?
+2021-08-04 16:35:06.857 DEBUG 10880 --- [http-nio-8080-exec-5] c.l.s.m.G.findGoodsVoByGoodsId           : ==> Parameters: 2(Integer)
+2021-08-04 16:35:06.859 DEBUG 10880 --- [http-nio-8080-exec-5] c.l.s.m.G.findGoodsVoByGoodsId           : <==      Total: 1
+2021-08-04 16:35:06.906 DEBUG 10880 --- [http-nio-8080-exec-5] c.l.s.m.SeckillOrderMapper.selectOne     : ==>  Preparing: SELECT id,user_id,order_id,goods_id FROM t_seckill_order WHERE (user_id = ? AND goods_id = ?)
+2021-08-04 16:35:06.907 DEBUG 10880 --- [http-nio-8080-exec-5] c.l.s.m.SeckillOrderMapper.selectOne     : ==> Parameters: 18000000000(Long), 2(Integer)
+2021-08-04 16:35:06.985 DEBUG 10880 --- [http-nio-8080-exec-5] c.l.s.m.SeckillOrderMapper.selectOne     : <==      Total: 1
+2021-08-04 16:37:25.334  INFO 7296 --- [main] com.ling.seckill.SeckillApplication      : Starting SeckillApplication using Java 11.0.12 on DESKTOP-F3P229A with PID 7296 (D:\Project\JAVA\秒杀系统\seckill\target\classes started by 32145 in D:\Project\JAVA\秒杀系统\seckill)
+2021-08-04 16:37:25.338  INFO 7296 --- [main] com.ling.seckill.SeckillApplication      : No active profile set, falling back to default profiles: default
+2021-08-04 16:37:26.028  INFO 7296 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-08-04 16:37:26.029  INFO 7296 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-08-04 16:37:26.052  INFO 7296 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2021-08-04 16:37:26.468  INFO 7296 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-08-04 16:37:26.475  INFO 7296 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-04 16:37:26.475  INFO 7296 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-08-04 16:37:26.546  INFO 7296 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-04 16:37:26.546  INFO 7296 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1149 ms
+2021-08-04 16:37:27.969  INFO 7296 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-08-04 16:37:27.979  INFO 7296 --- [main] com.ling.seckill.SeckillApplication      : Started SeckillApplication in 3.162 seconds (JVM running for 4.12)
+2021-08-04 16:37:28.607  INFO 7296 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-04 16:37:28.608  INFO 7296 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-04 16:37:28.609  INFO 7296 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-08-04 16:37:29.785  INFO 7296 --- [http-nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource       : DateHikariCP - Starting...
+2021-08-04 16:37:30.089  INFO 7296 --- [http-nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource       : DateHikariCP - Start completed.
+2021-08-04 16:37:30.096 DEBUG 7296 --- [http-nio-8080-exec-3] c.l.s.m.G.findGoodsVoByGoodsId           : ==>  Preparing: SELECT g.id, g.goods_name, g.goods_title, g.goods_img, g.goods_detail, g.goods_price, g.goods_stock, sg.seckill_price, sg.stock_count, sg.start_date, sg.end_date FROM t_goods g INNER JOIN t_seckill_goods sg ON g.id = sg.goods_id WHERE g.id =?
+2021-08-04 16:37:30.111 DEBUG 7296 --- [http-nio-8080-exec-3] c.l.s.m.G.findGoodsVoByGoodsId           : ==> Parameters: 2(Integer)
+2021-08-04 16:37:30.127 DEBUG 7296 --- [http-nio-8080-exec-3] c.l.s.m.G.findGoodsVoByGoodsId           : <==      Total: 1
+2021-08-04 16:39:44.367  INFO 14448 --- [main] com.ling.seckill.SeckillApplication      : Starting SeckillApplication using Java 11.0.12 on DESKTOP-F3P229A with PID 14448 (D:\Project\JAVA\秒杀系统\seckill\target\classes started by 32145 in D:\Project\JAVA\秒杀系统\seckill)
+2021-08-04 16:39:44.369  INFO 14448 --- [main] com.ling.seckill.SeckillApplication      : No active profile set, falling back to default profiles: default
+2021-08-04 16:39:44.966  INFO 14448 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-08-04 16:39:44.970  INFO 14448 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-08-04 16:39:45.003  INFO 14448 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.
+2021-08-04 16:39:45.504  INFO 14448 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-08-04 16:39:45.514  INFO 14448 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-04 16:39:45.514  INFO 14448 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-08-04 16:39:45.589  INFO 14448 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-04 16:39:45.589  INFO 14448 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1183 ms
+2021-08-04 16:39:46.978  INFO 14448 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-08-04 16:39:46.988  INFO 14448 --- [main] com.ling.seckill.SeckillApplication      : Started SeckillApplication in 3.027 seconds (JVM running for 4.132)
+2021-08-04 16:39:47.284  INFO 14448 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-04 16:39:47.286  INFO 14448 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-04 16:39:47.286  INFO 14448 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2021-08-04 16:39:48.395  INFO 14448 --- [http-nio-8080-exec-4] com.zaxxer.hikari.HikariDataSource       : DateHikariCP - Starting...
+2021-08-04 16:39:48.686  INFO 14448 --- [http-nio-8080-exec-4] com.zaxxer.hikari.HikariDataSource       : DateHikariCP - Start completed.
+2021-08-04 16:39:48.693 DEBUG 14448 --- [http-nio-8080-exec-4] c.l.s.m.G.findGoodsVoByGoodsId           : ==>  Preparing: SELECT g.id, g.goods_name, g.goods_title, g.goods_img, g.goods_detail, g.goods_price, g.goods_stock, sg.seckill_price, sg.stock_count, sg.start_date, sg.end_date FROM t_goods g INNER JOIN t_seckill_goods sg ON g.id = sg.goods_id WHERE g.id =?
+2021-08-04 16:39:48.711 DEBUG 14448 --- [http-nio-8080-exec-4] c.l.s.m.G.findGoodsVoByGoodsId           : ==> Parameters: 2(Integer)
+2021-08-04 16:39:48.725 DEBUG 14448 --- [http-nio-8080-exec-4] c.l.s.m.G.findGoodsVoByGoodsId           : <==      Total: 1
+2021-08-04 17:11:16.424  INFO 16184 --- [main] com.ling.seckill.SeckillApplication      : Starting SeckillApplication using Java 11.0.12 on DESKTOP-F3P229A with PID 16184 (D:\Project\JAVA\秒杀系统\seckill\target\classes started by 32145 in D:\Project\JAVA\秒杀系统\seckill)
+2021-08-04 17:11:16.427  INFO 16184 --- [main] com.ling.seckill.SeckillApplication      : No active profile set, falling back to default profiles: default
+2021-08-04 17:11:16.997  INFO 16184 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-08-04 17:11:16.999  INFO 16184 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-08-04 17:11:17.024  INFO 16184 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2021-08-04 17:11:17.444  INFO 16184 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-08-04 17:11:17.459  INFO 16184 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-04 17:11:17.459  INFO 16184 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-08-04 17:11:17.538  INFO 16184 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-04 17:11:17.538  INFO 16184 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1067 ms
+2021-08-04 17:11:18.879  INFO 16184 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-08-04 17:11:18.889  INFO 16184 --- [main] com.ling.seckill.SeckillApplication      : Started SeckillApplication in 2.862 seconds (JVM running for 4.011)
+2021-08-04 17:11:34.647  INFO 16184 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-04 17:11:34.648  INFO 16184 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-04 17:11:34.649  INFO 16184 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2021-08-04 17:11:35.794  INFO 16184 --- [http-nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource       : DateHikariCP - Starting...
+2021-08-04 17:11:36.068  INFO 16184 --- [http-nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource       : DateHikariCP - Start completed.
+2021-08-04 17:11:36.074 DEBUG 16184 --- [http-nio-8080-exec-3] c.l.s.m.G.findGoodsVoByGoodsId           : ==>  Preparing: SELECT g.id, g.goods_name, g.goods_title, g.goods_img, g.goods_detail, g.goods_price, g.goods_stock, sg.seckill_price, sg.stock_count, sg.start_date, sg.end_date FROM t_goods g INNER JOIN t_seckill_goods sg ON g.id = sg.goods_id WHERE g.id =?
+2021-08-04 17:11:36.089 DEBUG 16184 --- [http-nio-8080-exec-3] c.l.s.m.G.findGoodsVoByGoodsId           : ==> Parameters: 2(Integer)
+2021-08-04 17:11:36.102 DEBUG 16184 --- [http-nio-8080-exec-3] c.l.s.m.G.findGoodsVoByGoodsId           : <==      Total: 1

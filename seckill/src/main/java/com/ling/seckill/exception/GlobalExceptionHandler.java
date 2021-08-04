@@ -4,6 +4,7 @@ package com.ling.seckill.exception;/**
 
 import com.ling.seckill.vo.Result;
 import com.ling.seckill.vo.ResultEnum;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.BindException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
  * @description: 全局异常处理类
  **/
 
+@Slf4j
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 

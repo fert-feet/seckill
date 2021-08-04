@@ -14,6 +14,7 @@ D:\Project\JAVA\秒杀系统\seckill\src\main\java\com\ling\seckill\vo\GoodsVo.j
 D:\Project\JAVA\秒杀系统\seckill\src\main\java\com\ling\seckill\service\ISeckillOrderService.java
 D:\Project\JAVA\秒杀系统\seckill\src\main\java\com\ling\seckill\utils\UUIDUtil.java
 D:\Project\JAVA\秒杀系统\seckill\src\main\java\com\ling\seckill\pojo\Goods.java
+D:\Project\JAVA\秒杀系统\seckill\src\main\java\com\ling\seckill\utils\UserUtil.java
 D:\Project\JAVA\秒杀系统\seckill\src\main\java\com\ling\seckill\pojo\SeckillOrder.java
 D:\Project\JAVA\秒杀系统\seckill\src\main\java\com\ling\seckill\config\WebConfig.java
 D:\Project\JAVA\秒杀系统\seckill\src\main\java\com\ling\seckill\mapper\GoodsMapper.java

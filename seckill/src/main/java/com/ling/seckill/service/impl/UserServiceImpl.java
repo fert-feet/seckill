@@ -1,6 +1,5 @@
 package com.ling.seckill.service.impl;
 
-//import com.ling.seckill.exception.GlobalException;
 import com.ling.seckill.exception.GlobalException;
 import com.ling.seckill.pojo.User;
 import com.ling.seckill.mapper.UserMapper;
@@ -77,5 +76,29 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
             CookieUtil.setCookie(request,response,"userTicket",userTicket);
         }
         return user;
+    }
+
+    /**
+     * 更新密码
+     * @param userTicket
+     * @param password
+     * @param request
+     * @param response
+     * @return
+     */
+    @Override
+    public Result updatePassword(String userTicket, String password, HttpServletRequest request, HttpServletResponse response) {
+        User user=getUserByCookie(request,response, userTicket);
+        if (null==user){
+            throw new GlobalException(ResultEnum.MOBILE_NOT_EXIST);
+        }
+        user.setPassword(MD5Util.inputPassToDBPass(password,user.getSalt()));
+        int result = userMapper.updateById(user);
+        if (1 == result) {
+            //删除redis
+            redisTemplate.delete("user:"+ userTicket);
+            return Result.success();
+        }
+        return Result.error(ResultEnum.UPDATE_PASSWORD_FAILE);
     }
 }
