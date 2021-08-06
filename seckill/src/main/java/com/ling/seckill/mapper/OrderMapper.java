@@ -2,6 +2,7 @@ package com.ling.seckill.mapper;
 
 import com.ling.seckill.pojo.Order;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.ling.seckill.vo.OrderDetailVo;
 
 /**
  * <p>
@@ -12,5 +13,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @since 2021-07-26
  */
 public interface OrderMapper extends BaseMapper<Order> {
+
 
 }

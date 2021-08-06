@@ -85,7 +85,7 @@ public class GoodsController {
      */
     @GetMapping(value = "/toDetail2/{goodsId}",produces = "text/html;charset=utf-8")
     @ResponseBody
-    public String toDetail2(Model model, User user, @PathVariable Integer goodsId, HttpServletRequest request, HttpServletResponse response){
+    public String toDetail2(Model model, User user, @PathVariable Long goodsId, HttpServletRequest request, HttpServletResponse response){
         ValueOperations valueOperations = redisTemplate.opsForValue();
         String html = (String) valueOperations.get("goodsDetails:" + goodsId);
         if (StringUtils.hasLength(html)){
@@ -132,7 +132,7 @@ public class GoodsController {
      */
     @GetMapping("/detail/{goodsId}")
     @ResponseBody
-    public Result toDetail(Model model, User user, @PathVariable Integer goodsId){
+    public Result toDetail(Model model, User user, @PathVariable Long goodsId){
         GoodsVo goods = goodsService.findGoodsVoByGoodsId(goodsId);
         Date startDate = goods.getStartDate();
         Date endDate = goods.getEndDate();

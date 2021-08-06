@@ -27,5 +27,5 @@ public interface GoodsMapper extends BaseMapper<Goods> {
      * @param goodsId
      * @return
      */
-    GoodsVo findGoodsVoByGoodsId(Integer goodsId);
+    GoodsVo findGoodsVoByGoodsId(Long goodsId);
 }

@@ -1,5 +1,25 @@
 
 spring:
+  #静态资源处理
+  resources:
+    #启动默认静态资源处理，默认启用
+    add-mappings: true
+    cache:
+      cachecontrol:
+        #缓存相应时间，单位秒
+        max-age: 3600
+    chain:
+      #资源链启动缓存，默认启动
+      cache: true
+      #启用资源链，默认禁用
+      enabled: true
+      #启用压缩资源(gzip,brotli)解析，默认禁用
+      compressed: true
+      #启用h5应用缓存，默认禁用
+      html-application-cache: true
+    static-locations: classpath:/static/
+
+
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
 #    ubuntu配置

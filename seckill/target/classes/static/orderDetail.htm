@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>订单详情</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- jquery -->
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <!-- bootstrap -->
+    <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script>
+    <!-- layer -->
+    <script type="text/javascript" src="/layer/layer.js"></script>
+    <!-- common.js -->
+    <script type="text/javascript" src="/js/common.js"></script>
+</head>
+<body>
+<div class="panel panel-default">
+    <div class="panel-heading">秒杀订单详情</div>
+    <table class="table" id="order">
+        <tr>
+            <td>商品名称</td>
+            <td id="goodsName" colspan="3"></td>
+        </tr>
+        <tr>
+            <td>商品图片</td>
+            <td colspan="2"><img id="goodsImg" width="200" height="200" /></td>
+        </tr>
+        <tr>
+            <td>订单价格</td>
+            <td colspan="2" id="goodsPrice"></td>
+        </tr>
+        <tr>
+            <td>下单时间</td>
+            <td id="createDate" colspan="2"></td>
+        </tr>
+        <tr>
+            <td>订单状态</td>
+            <td id="status">
+<!--                <span th:if="${order.status eq 0}">未支付</span>-->
+<!--                <span th:if="${order.status eq 1}">待发货</span>-->
+<!--                <span th:if="${order.status eq 2}">已发货</span>-->
+<!--                <span th:if="${order.status eq 3}">已收货</span>-->
+<!--                <span th:if="${order.status eq 4}">已退款</span>-->
+<!--                <span th:if="${order.status eq 5}">已完成</span>-->
+            </td>
+            <td>
+                <button class="btn btn-primary btn-block" type="submit" id="payButton">立即支付</button>
+            </td>
+        </tr>
+        <tr>
+            <td>收货人</td>
+            <td colspan="2">XXX  18012345678</td>
+        </tr>
+        <tr>
+            <td>收货地址</td>
+            <td colspan="2">上海市浦东区世纪大道</td>
+        </tr>
+    </table>
+</div>
+
+</body>
+<script>
+    $(function (){
+        getOrderDetails();
+    });
+
+    function getOrderDetails(){
+        let orderId = g_getQueryString("orderId");
+        $.ajax({
+            url:'/order/detail/' + orderId,
+            type:'GET',
+            success:function (data){
+                if (data.code==200){
+                    layer.msg("成功")
+                    render(data.obj)
+                }else {
+                    layer.msg(data.message);
+                }
+            },
+            error:function (){
+                layer.msg("客户端请求异常")
+            }
+        })
+    }
+
+    function render(detail){
+        let goods = detail.goodsVo;
+        let order = detail.order;
+        let status = order.status;
+        $("#goodsName").text(goods.goodsName);
+        $("#goodsImg").attr("src", goods.goodsImg);
+        $("#goodsPrice").text(goods.goodsPrice);
+        $("#createDate").text(order.createDate);
+        if (status==0){
+            $("#status").text("未支付")
+        }
+        if (status==1){
+            $("#status").text("待发货")
+        }
+        if (status==2){
+            $("#status").text("已发货")
+        }
+        if (status==3){
+            $("#status").text("已收货")
+        }
+        if (status==4){
+            $("#status").text("已退款")
+        }
+        if (status==5){
+            $("#status").text("已完成")
+        }
+
+    }
+</script>
+</html>
