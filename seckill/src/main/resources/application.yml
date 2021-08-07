@@ -67,6 +67,33 @@ spring:
         #最小空闲连接，默认0
         min-idle: 5
 
+  rabbitmq:
+    host: 192.168.31.114
+    username: guest
+    password: guest
+    virtual-host: /
+    port: 5672
+    listener:
+      simple:
+#        消费者最小数量
+        concurrency: 10
+#        消费者最大数量
+        max-concurrency: 10
+#        限制消费者每次只处理一条消息，处理完再处理下一条
+        prefetch: 1
+#        被拒绝时重新进入容器
+        default-requeue-rejected: true
+    template:
+      retry:
+#        发布重试，默认false
+        enabled: true
+#        重试时间
+        initial-interval: 1000ms
+#        重试次数
+        max-attempts: 3
+#        重试最大间隔
+        max-interval: 10000ms
+
 mybatis-plus:
   # 配置Mapper.xml映射文件
   mapper-locations: classpath*:/mapper/*Mapper.xml
