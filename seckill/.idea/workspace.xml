@@ -6,25 +6,22 @@
   <component name="ChangeListManager">
     <list default="true" id="8d1c958a-4b1e-4abe-877b-47b1de4654ec" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myLog.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myLog.log.2021-08-04.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myLog.log.2021-08-05.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myLog.log.2021-08-06.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myLog.log.2021-08-07.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myLog.log.2021-08-07.0292625878305000.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myLog.log.2021-08-07.0292954836448400.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myLog.log.2021-08-07.1.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myLog.log.2021-08-07.1292634967784600.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myLog.log.2021-08-07.1292964086113100.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myLog.log.2021-08-07.2.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myLog.log.2021-08-07.2292644340682200.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myLog.log.2021-08-07.2292974508843100.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myLog.log.2021-08-07.3.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seckill.iml" beforeDir="false" afterPath="$PROJECT_DIR$/seckill.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myLog.log" beforeDir="false" afterPath="$PROJECT_DIR$/myLog.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ling/seckill/config/RabbitMQConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ling/seckill/config/RabbitMqConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ling/seckill/controller/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ling/seckill/controller/GoodsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ling/seckill/controller/SecKillController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ling/seckill/controller/SecKillController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ling/seckill/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ling/seckill/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ling/seckill/rabbitmq/MQReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ling/seckill/rabbitmq/MQReceiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ling/seckill/rabbitmq/MQSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ling/seckill/rabbitmq/MQSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ling/seckill/service/ISeckillOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ling/seckill/service/ISeckillOrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ling/seckill/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ling/seckill/service/impl/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ling/seckill/service/impl/SeckillOrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ling/seckill/service/impl/SeckillOrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/goodsDetail.htm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/goodsDetail.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ling/seckill/config/RabbitMQConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ling/seckill/config/RabbitMQConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ling/seckill/controller/SecKillController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ling/seckill/controller/SecKillController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ling/seckill/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ling/seckill/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ling/seckill/rabbitmq/MQReceiver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ling/seckill/rabbitmq/MQReceiver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ling/seckill/rabbitmq/MQSender.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ling/seckill/rabbitmq/MQSender.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +37,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1wCu9TsdsdCvYlOUrZy6A6jmfqu" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -58,7 +63,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../seckill-demo" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Language Defaults" />
   </component>
   <component name="ReactorSettings">
@@ -67,6 +72,9 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Project\JAVA\秒杀系统\seckill\src\main\resources\static" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.ling.seckill.utils" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.SeckillApplication">
@@ -83,15 +91,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -122,7 +128,8 @@
       <workItem from="1628149955333" duration="6515000" />
       <workItem from="1628237764008" duration="4840000" />
       <workItem from="1628264645690" duration="2989000" />
-      <workItem from="1628317068494" duration="6822000" />
+      <workItem from="1628317068494" duration="7466000" />
+      <workItem from="1628410696181" duration="21481000" />
     </task>
     <servers />
   </component>

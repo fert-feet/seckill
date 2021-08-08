@@ -2,24 +2,34 @@ package com.ling.seckill.controller;/**
  * Created by Ky2Fe on 2021/7/27 16:29
  */
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.ling.seckill.pojo.Order;
+import com.ling.seckill.pojo.SeckillMessage;
 import com.ling.seckill.pojo.SeckillOrder;
 import com.ling.seckill.pojo.User;
+import com.ling.seckill.rabbitmq.MQSender;
 import com.ling.seckill.service.IGoodsService;
 import com.ling.seckill.service.IOrderService;
 import com.ling.seckill.service.ISeckillOrderService;
+import com.ling.seckill.utils.JsonUtil;
 import com.ling.seckill.vo.GoodsVo;
 import com.ling.seckill.vo.Result;
 import com.ling.seckill.vo.ResultEnum;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.CollectionUtils;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author: Ky2Fe
@@ -29,7 +39,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Slf4j
 @Controller
 @RequestMapping("/seckill")
-public class SecKillController {
+public class SecKillController implements InitializingBean {
 
     @Autowired
     private ISeckillOrderService seckillOrderService;
@@ -43,65 +53,75 @@ public class SecKillController {
     @Autowired
     private RedisTemplate redisTemplate;
 
-    /**
-     * 秒杀
-     * windows优化前qps:1037
-     * linux优化前qps:199
-     * @param model
-     * @param user
-     * @param goodsId
-     * @return
-     */
-    @PostMapping("/doSeckill2")
-    public String doSecKill2(Model model, User user,Long goodsId){
-        if (null==user){
-            return "login";
-        }
-        model.addAttribute("user",user);
-        GoodsVo goods = goodsService.findGoodsVoByGoodsId(goodsId);
-        //判断库存
-        if (goods.getStockCount()<1){
-            model.addAttribute("errmsg", ResultEnum.EMPTY_STOCK.getMessage());
-            return "secKillFail";
-        }
-        //判断重复抢购
-        SeckillOrder seckillOrder=seckillOrderService.getOne(new QueryWrapper<SeckillOrder>().eq("user_id",user.getId()).eq("goods_id",goodsId));
-        if (seckillOrder!=null){
-            model.addAttribute("errmsg", ResultEnum.REPEAT_ERROR.getMessage());
-            return "secKillFail";
-        }
-        Order order=orderService.secKill(user,goods);
-        model.addAttribute("order",order);
-        model.addAttribute("goods",goods);
-        return "orderDetail";
-    }
+    @Autowired
+    private MQSender mqSender;
+
+    private Map<Long,Boolean> emptyStockMap =new HashMap<>();
 
     /**
      * 秒杀
      * windows优化前qps:1037
      * linux优化前qps:1479
-     * @param model
      * @param user
      * @param goodsId
      * @return
      */
     @PostMapping("/doSeckill")
     @ResponseBody
-    public Result doSecKill(Model model, User user, Long goodsId){
+    public Result doSecKill( User user, Long goodsId){
         if (null==user){
             return Result.error(ResultEnum.SESSION_ERROR);
         }
-        GoodsVo goods = goodsService.findGoodsVoByGoodsId(goodsId);
-        //判断库存
-        if (goods.getStockCount()<1){
-            return Result.error(ResultEnum.EMPTY_STOCK);
-        }
-        SeckillOrder seckillOrder = (SeckillOrder) redisTemplate.opsForValue().get("order:" + user.getId() + ":" + goods.getId());
-        //判断重复抢购
+        ValueOperations valueOperations = redisTemplate.opsForValue();
+        SeckillOrder seckillOrder = (SeckillOrder) valueOperations.get("order:" + user.getId() + ":" + goodsId);
         if (seckillOrder!=null){
             return Result.error(ResultEnum.REPEAT_ERROR);
         }
-        Order order=orderService.secKill(user,goods);
-        return Result.success(order);
+        //内存标记，减少redis访问
+        if (emptyStockMap.get(goodsId)){
+            return Result.error(ResultEnum.EMPTY_STOCK);
+        }
+        //预减库存操作
+        Long stock = valueOperations.decrement("seckillGoods:" + goodsId);
+        if (stock<0){
+            valueOperations.increment("seckillGoods:" + goodsId);
+            emptyStockMap.put(goodsId,true);
+            return Result.error(ResultEnum.EMPTY_STOCK);
+        }
+        SeckillMessage seckillMessage = new SeckillMessage(user,goodsId);
+        mqSender.sendSeckillMessage(JsonUtil.object2JsonStr(seckillMessage));
+        return Result.success(0);
+    }
+
+    /**
+     *
+     * @param user
+     * @param goodsId
+     * @return orderId:成功,-1:秒杀失败,0:排队中
+     */
+    @GetMapping("/result")
+    @ResponseBody
+    public Result getResult(User user,Long goodsId){
+        if (null == user) {
+            return Result.error(ResultEnum.SESSION_ERROR);
+        }
+        Long orderId = seckillOrderService.getResult(user,goodsId);
+        return Result.success(orderId);
+    }
+
+    /**
+     * 系统初始化，把商品库存数量加载到Redis
+     * @throws Exception
+     */
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        List<GoodsVo> goodsList = goodsService.findGoodsVo();
+        if (CollectionUtils.isEmpty(goodsList)){
+            return;
+        }
+        goodsList.forEach(goodsVo -> {
+            redisTemplate.opsForValue().set("seckillGoods:"+goodsVo.getId(),goodsVo.getStockCount());
+            emptyStockMap.put(goodsVo.getId(),false);
+        });
     }
 }

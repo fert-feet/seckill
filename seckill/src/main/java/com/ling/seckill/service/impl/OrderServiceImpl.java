@@ -67,6 +67,10 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
         if (!result) {
             return null;
         }
+        if (seckillGoods.getStockCount()<1){
+            redisTemplate.opsForValue().set("isStockEmpty"+goods.getId(),"0");
+            return null;
+        }
         //生成订单
         Order order = new Order();
         order.setUserId(user.getId());

@@ -83,53 +83,6 @@ public class GoodsController {
      * @param goodsId
      * @return
      */
-    @GetMapping(value = "/toDetail2/{goodsId}",produces = "text/html;charset=utf-8")
-    @ResponseBody
-    public String toDetail2(Model model, User user, @PathVariable Long goodsId, HttpServletRequest request, HttpServletResponse response){
-        ValueOperations valueOperations = redisTemplate.opsForValue();
-        String html = (String) valueOperations.get("goodsDetails:" + goodsId);
-        if (StringUtils.hasLength(html)){
-            return html;
-        }
-        GoodsVo goods = goodsService.findGoodsVoByGoodsId(goodsId);
-        Date startDate = goods.getStartDate();
-        Date endDate = goods.getEndDate();
-        Date currentDate = new Date();
-        //秒杀状态
-        int secKillStatus = 0;
-        //秒杀倒计时
-        int remainSeconds = 0;
-        //秒杀还未开始
-        if (currentDate.before(startDate)) {
-            remainSeconds = ((int) ((startDate.getTime() - currentDate.getTime()) / 1000));
-        } else if (currentDate.after(endDate)) {
-            //	秒杀已结束
-            secKillStatus = 2;
-            remainSeconds = -1;
-        } else {
-            //秒杀中
-            secKillStatus = 1;
-            remainSeconds = 0;
-        }
-        model.addAttribute("user",user);
-        model.addAttribute("goods",goods);
-        model.addAttribute("secKillStatus",secKillStatus);
-        model.addAttribute("remainSeconds",remainSeconds);
-        WebContext webContext = new WebContext(request, response, request.getServletContext(), request.getLocale(), model.asMap());
-        html=thymeleafViewResolver.getTemplateEngine().process("goodsDetail",webContext);
-        if (StringUtils.hasLength(html)){
-            valueOperations.set("goodsDetails:"+goodsId,html,60,TimeUnit.SECONDS);
-        }
-        return html;
-    }
-
-    /**
-     * 商品详情页
-     * @param model
-     * @param user
-     * @param goodsId
-     * @return
-     */
     @GetMapping("/detail/{goodsId}")
     @ResponseBody
     public Result toDetail(Model model, User user, @PathVariable Long goodsId){
