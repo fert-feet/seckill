@@ -7,21 +7,20 @@
     <list default="true" id="8d1c958a-4b1e-4abe-877b-47b1de4654ec" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myLog.log" beforeDir="false" afterPath="$PROJECT_DIR$/myLog.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ling/seckill/config/RabbitMQConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ling/seckill/config/RabbitMqConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ling/seckill/controller/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ling/seckill/controller/GoodsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myLog.log.2021-08-07.0.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myLog.log.2021-08-08.0.gz" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ling/seckill/controller/SecKillController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ling/seckill/controller/SecKillController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ling/seckill/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ling/seckill/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ling/seckill/rabbitmq/MQReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ling/seckill/rabbitmq/MQReceiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ling/seckill/rabbitmq/MQSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ling/seckill/rabbitmq/MQSender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ling/seckill/service/ISeckillOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ling/seckill/service/ISeckillOrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ling/seckill/service/IOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ling/seckill/service/IOrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ling/seckill/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ling/seckill/service/impl/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ling/seckill/service/impl/SeckillOrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ling/seckill/service/impl/SeckillOrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ling/seckill/vo/ResultEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ling/seckill/vo/ResultEnum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/goodsDetail.htm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/goodsDetail.htm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ling/seckill/config/RabbitMQConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ling/seckill/config/RabbitMQConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ling/seckill/SeckillApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ling/seckill/SeckillApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/ling/seckill/controller/SecKillController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ling/seckill/controller/SecKillController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ling/seckill/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ling/seckill/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ling/seckill/rabbitmq/MQReceiver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ling/seckill/rabbitmq/MQReceiver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ling/seckill/rabbitmq/MQSender.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ling/seckill/rabbitmq/MQSender.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ling/seckill/service/IOrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ling/seckill/service/IOrderService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ling/seckill/service/impl/OrderServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ling/seckill/service/impl/OrderServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ling/seckill/vo/ResultEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ling/seckill/vo/ResultEnum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/goodsDetail.htm" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/goodsDetail.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/ling/seckill/SeckillApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/ling/seckill/SeckillApplicationTests.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +63,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../seckill-demo" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Language Defaults" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
@@ -102,6 +101,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SeckillApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="seckill" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ling.seckill.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ling.seckill" />
+      <option name="MAIN_CLASS_NAME" value="com.ling.seckill.SeckillApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SeckillApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="seckill" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ling.seckill.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ling.seckill" />
+      <option name="MAIN_CLASS_NAME" value="com.ling.seckill.SeckillApplicationTests" />
+      <option name="METHOD_NAME" value="contextLoads" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SeckillApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="seckill" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.ling.seckill.SeckillApplication" />
@@ -111,6 +141,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SeckillApplicationTests.contextLoads" />
+        <item itemvalue="JUnit.SeckillApplicationTests" />
         <item itemvalue="Application.UserUtil" />
       </list>
     </recent_temporary>
@@ -129,7 +161,9 @@
       <workItem from="1628237764008" duration="4840000" />
       <workItem from="1628264645690" duration="2989000" />
       <workItem from="1628317068494" duration="7466000" />
-      <workItem from="1628410696181" duration="21481000" />
+      <workItem from="1628410696181" duration="22201000" />
+      <workItem from="1628573374160" duration="734000" />
+      <workItem from="1628574137301" duration="4897000" />
     </task>
     <servers />
   </component>

@@ -30,4 +30,22 @@ public interface IOrderService extends IService<Order> {
      * @return
      */
     OrderDetailVo getOrderDetail(Integer orderId);
+
+    /**
+     * 创建地址
+     * @param user
+     * @param goodsId
+     * @return
+     */
+    String createPath(User user, Long goodsId);
+
+
+    /**
+     * 地址检查
+     * @param user
+     * @param goodsId
+     * @param path
+     * @return
+     */
+    boolean checkPath(User user, Long goodsId, String path);
 }

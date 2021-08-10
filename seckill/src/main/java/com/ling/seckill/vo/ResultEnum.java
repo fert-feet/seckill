@@ -32,6 +32,7 @@ public enum ResultEnum {
     //秒杀模块5005xx
     EMPTY_STOCK(500500,"库存不足"),
     REPEAT_ERROR(500501,"重复下单"),
+    REQUEST_ILLEGAL(500502,"请求非法"),
     //订单模块5006xx
     ORDER_ERROR(500601,"创建订单错误")
     ;

@@ -2,6 +2,8 @@ package com.ling.seckill.service.impl;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
@@ -16,6 +18,8 @@ import com.ling.seckill.service.IOrderService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.ling.seckill.service.ISeckillGoodsService;
 import com.ling.seckill.service.ISeckillOrderService;
+import com.ling.seckill.utils.MD5Util;
+import com.ling.seckill.utils.UUIDUtil;
 import com.ling.seckill.vo.GoodsVo;
 import com.ling.seckill.vo.OrderDetailVo;
 import com.ling.seckill.vo.ResultEnum;
@@ -24,6 +28,7 @@ import org.springframework.data.annotation.Transient;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StringUtils;
 
 /**
  * <p>
@@ -110,4 +115,35 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
         orderDetailVo.setOrder(order);
         return orderDetailVo;
     }
+
+    /**
+     *  创建地址
+     * @param user
+     * @param goodsId
+     * @return
+     */
+    @Override
+    public String createPath(User user, Long goodsId) {
+        String str = MD5Util.md5(UUIDUtil.uuid() + "123456");
+        redisTemplate.opsForValue().set("seckillPath:"+user.getId()+":"+goodsId,str,60, TimeUnit.SECONDS);
+        return str;
+    }
+
+    /**
+     * 接口地址校验
+     * @param user
+     * @param goodsId
+     * @param path
+     * @return
+     */
+    @Override
+    public boolean checkPath(User user, Long goodsId, String path) {
+        if (null==user||goodsId<0|| !StringUtils.hasLength(path)){
+            return false;
+        }
+        String redisPath = (String) redisTemplate.opsForValue().get("seckillPath:" + user.getId() + ":" + goodsId);
+        return path.equals(redisPath);
+    }
+
+
 }

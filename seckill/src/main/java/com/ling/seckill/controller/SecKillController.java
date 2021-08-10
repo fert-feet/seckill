@@ -22,10 +22,7 @@ import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.CollectionUtils;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -66,13 +63,17 @@ public class SecKillController implements InitializingBean {
      * @param goodsId
      * @return
      */
-    @PostMapping("/doSeckill")
+    @PostMapping("/{path}/doSeckill")
     @ResponseBody
-    public Result doSecKill( User user, Long goodsId){
+    public  Result doSecKill(User user, Long goodsId, @PathVariable String path){
         if (null==user){
             return Result.error(ResultEnum.SESSION_ERROR);
         }
         ValueOperations valueOperations = redisTemplate.opsForValue();
+        boolean check=orderService.checkPath(user,goodsId,path);
+        if (!check){
+            return Result.error(ResultEnum.MOBILE_NOT_EXIST);
+        }
         SeckillOrder seckillOrder = (SeckillOrder) valueOperations.get("order:" + user.getId() + ":" + goodsId);
         if (seckillOrder!=null){
             return Result.error(ResultEnum.REPEAT_ERROR);
@@ -108,6 +109,17 @@ public class SecKillController implements InitializingBean {
         Long orderId = seckillOrderService.getResult(user,goodsId);
         return Result.success(orderId);
     }
+
+    @GetMapping("/path")
+    @ResponseBody
+    public Result getPath(User user,Long goodsId){
+        if (null==user){
+            return Result.error(ResultEnum.SESSION_ERROR);
+        }
+        String path = orderService.createPath(user, goodsId);
+        return Result.success(path);
+    }
+
 
     /**
      * 系统初始化，把商品库存数量加载到Redis
