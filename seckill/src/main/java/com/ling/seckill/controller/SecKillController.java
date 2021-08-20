@@ -2,6 +2,7 @@ package com.ling.seckill.controller;/**
  * Created by Ky2Fe on 2021/7/27 16:29
  */
 
+import com.ling.seckill.exception.GlobalException;
 import com.ling.seckill.pojo.Order;
 import com.ling.seckill.pojo.SeckillMessage;
 import com.ling.seckill.pojo.SeckillOrder;
@@ -14,6 +15,8 @@ import com.ling.seckill.utils.JsonUtil;
 import com.ling.seckill.vo.GoodsVo;
 import com.ling.seckill.vo.Result;
 import com.ling.seckill.vo.ResultEnum;
+import com.wf.captcha.SpecCaptcha;
+import com.wf.captcha.base.Captcha;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,9 +27,14 @@ import org.springframework.ui.Model;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.awt.*;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author: Ky2Fe
@@ -112,12 +120,30 @@ public class SecKillController implements InitializingBean {
 
     @GetMapping("/path")
     @ResponseBody
-    public Result getPath(User user,Long goodsId){
+    public Result getPath(User user,Long goodsId,String captcha){
         if (null==user){
             return Result.error(ResultEnum.SESSION_ERROR);
         }
+        boolean checkCaptcha=orderService.captcha(user,goodsId,captcha);
         String path = orderService.createPath(user, goodsId);
         return Result.success(path);
+    }
+
+    @GetMapping("/captcha")
+    public void captcha(User user, Long goodsId, HttpServletRequest request, HttpServletResponse response) throws Exception {
+        if (null==user||goodsId<0){
+            throw new GlobalException(ResultEnum.SESSION_ERROR);
+        }
+        response.setContentType("image/jpg");
+        //设置缓存
+        response.setHeader("Pragma", "No-cache");
+        response.setHeader("Cache-Control", "no-cache");
+        response.setDateHeader("Expires", 0);
+
+        SpecCaptcha specCaptcha = new SpecCaptcha(132, 32, 3);
+        specCaptcha.setFont(new Font("Verdana", Font.PLAIN, 32));
+        redisTemplate.opsForValue().set("captcha:"+user.getId()+":"+goodsId,specCaptcha.text().toLowerCase(),5, TimeUnit.MINUTES);
+        specCaptcha.out(response.getOutputStream());
     }
 
 
@@ -136,4 +162,6 @@ public class SecKillController implements InitializingBean {
             emptyStockMap.put(goodsVo.getId(),false);
         });
     }
+
+
 }

@@ -1,8 +1,6 @@
 package com.ling.seckill.service.impl;
-import java.math.BigDecimal;
 import java.util.Date;
-import java.util.List;
-import java.util.UUID;
+import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -24,8 +22,8 @@ import com.ling.seckill.vo.GoodsVo;
 import com.ling.seckill.vo.OrderDetailVo;
 import com.ling.seckill.vo.ResultEnum;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.annotation.Transient;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
@@ -143,6 +141,22 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
         }
         String redisPath = (String) redisTemplate.opsForValue().get("seckillPath:" + user.getId() + ":" + goodsId);
         return path.equals(redisPath);
+    }
+
+    /**
+     * 校验验证码
+     * @param user
+     * @param goodsId
+     * @param captcha
+     * @return
+     */
+    @Override
+    public boolean captcha(User user, Long goodsId, String captcha) {
+        String redisCaptcha = (String) redisTemplate.opsForValue().get("captcha:" + user.getId() + ":" + goodsId);
+        if (captcha.toLowerCase(Locale.ROOT).equals(redisCaptcha)){
+            return true;
+        }
+        return false;
     }
 
 

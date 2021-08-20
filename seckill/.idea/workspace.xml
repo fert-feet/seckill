@@ -4,7 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d1c958a-4b1e-4abe-877b-47b1de4654ec" name="Default Changelist" comment="" />
+    <list default="true" id="8d1c958a-4b1e-4abe-877b-47b1de4654ec" name="Default Changelist" comment="隐藏秒杀地址">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myLog.log" beforeDir="false" afterPath="$PROJECT_DIR$/myLog.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seckill.iml" beforeDir="false" afterPath="$PROJECT_DIR$/seckill.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ling/seckill/controller/SecKillController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ling/seckill/controller/SecKillController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ling/seckill/service/IOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ling/seckill/service/IOrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ling/seckill/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ling/seckill/service/impl/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ling/seckill/vo/ResultEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ling/seckill/vo/ResultEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/goodsDetail.htm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/goodsDetail.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ling/seckill/controller/SecKillController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ling/seckill/controller/SecKillController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ling/seckill/service/IOrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ling/seckill/service/IOrderService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ling/seckill/service/impl/OrderServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ling/seckill/service/impl/OrderServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ling/seckill/vo/ResultEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ling/seckill/vo/ResultEnum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/goodsDetail.htm" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/goodsDetail.htm" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,6 +61,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../seckill-demo" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="ReactorSettings">
@@ -146,7 +164,13 @@
       <workItem from="1628317068494" duration="7466000" />
       <workItem from="1628410696181" duration="22201000" />
       <workItem from="1628573374160" duration="734000" />
-      <workItem from="1628574137301" duration="5199000" />
+      <workItem from="1628574137301" duration="5498000" />
+      <workItem from="1628664546559" duration="1647000" />
+      <workItem from="1628666221395" duration="2959000" />
+      <workItem from="1629027070583" duration="590000" />
+      <workItem from="1629295612933" duration="2046000" />
+      <workItem from="1629302012183" duration="530000" />
+      <workItem from="1629473573571" duration="799000" />
     </task>
     <servers />
   </component>
