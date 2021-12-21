@@ -1,6 +1,6 @@
-package com.ling.seckill.mapper;
+package com.ling.springshiro.mapper;
 
-import com.ling.seckill.pojo.User;
+import com.ling.springshiro.pojo.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author ky2fe
- * @since 2021-07-26
+ * @since 2021-10-01
  */
 public interface UserMapper extends BaseMapper<User> {
 

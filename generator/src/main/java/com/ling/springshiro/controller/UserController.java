@@ -1,4 +1,4 @@
-package com.ling.seckill.controller;
+package com.ling.springshiro.controller;
 
 
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,10 +11,10 @@ import org.springframework.stereotype.Controller;
  * </p>
  *
  * @author ky2fe
- * @since 2021-07-26
+ * @since 2021-10-01
  */
 @Controller
-@RequestMapping("/order")
-public class OrderController {
+@RequestMapping("/user")
+public class UserController {
 
 }

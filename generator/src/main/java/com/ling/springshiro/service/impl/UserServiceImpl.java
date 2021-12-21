@@ -1,8 +1,8 @@
-package com.ling.seckill.service.impl;
+package com.ling.springshiro.service.impl;
 
-import com.ling.seckill.pojo.User;
-import com.ling.seckill.mapper.UserMapper;
-import com.ling.seckill.service.IUserService;
+import com.ling.springshiro.pojo.User;
+import com.ling.springshiro.mapper.UserMapper;
+import com.ling.springshiro.service.IUserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
  * </p>
  *
  * @author ky2fe
- * @since 2021-07-26
+ * @since 2021-10-01
  */
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IUserService {
